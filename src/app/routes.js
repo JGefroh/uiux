@@ -24,6 +24,11 @@
                 url: '/buttons',
                 templateUrl: 'modules/demos/buttons/ButtonDemoView.html',
                 controller: 'ButtonDemoController'
+            })
+            .state('demo.forms', {
+                url: '/forms',
+                templateUrl: 'modules/demos/forms/FormDemoView.html',
+                controller: 'FormDemoController'
             });
             $urlRouterProvider.when('', '/splash'); //[JG]: Default page to splash when accessing for first time.
     }
