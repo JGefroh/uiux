@@ -1,0 +1,32 @@
+<h3>Make it Obvious</h3>
+<p>
+    If a user doesn't know what a button does, they may be afraid to click on it. User interfaces shouldn't be scary to use.
+</p>
+<small>Example (Bad)</small>
+<div class="well">
+    <div class="row">
+        <div class="col-xs-4">
+            <button data-ng-click="changeColor('button_change_confusing')"
+                    class="btn btn-{{ operations['button_change_confusing'].color }} pull-right" >
+                Execute</button>
+        </div>
+        <div class="col-xs-8">
+            It's hard to tell what this button will do. The wording isn't descriptive, and there isn't enough context to tell what it does.
+        </div>
+    </div>
+</div>
+
+<small>Example (Good)</small>
+<div class="well">
+    <div class="row">
+        <div class="col-xs-4">
+            <button data-ng-click="changeColor('button_change_obvious')"
+                    class="btn btn-{{ operations['button_change_obvious'].color }} pull-right"
+                    title="Cycles the color of the button through 6 different colors.">Change Button Color</button>
+        </div>
+        <div class="col-xs-8">
+            We can tell exactly what this button will do at a glance. Extra information is available if you hover over it, too!
+        </div>
+    </div>
+</div>
+<br/>

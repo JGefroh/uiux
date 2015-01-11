@@ -1,0 +1,9 @@
+<div>
+    <div data-ng-if="isLoading">
+        <span class="fa fa-spin fa-spinner"></span>
+        {{ message }}
+    </div>
+    <div data-ng-if="!isLoading" data-ng-transclude>
+
+    </div>
+</div>

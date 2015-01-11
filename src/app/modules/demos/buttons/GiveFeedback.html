@@ -1,0 +1,76 @@
+<h3>Give Users Feedback</h3>
+<p>
+    When a user clicks on a button, they expect something to happen. If you don't give them feedback, they may get confused.
+</p>
+
+<small>Example (Bad)</small>
+<div class="well">
+    <div class="row">
+        <div class="col-xs-2">
+            <button class="btn btn-success pull-right" data-ng-click="play('button_feedback_none')">
+                <span class="fa fa-save"></span>
+                Save
+            </button>
+        </div>
+        <div class="col-xs-10">
+            A button without any feedback. Are you sure you clicked it?
+        </div>
+    </div>
+</div>
+<small>Example (Good)</small>
+<div class="well">
+    <div class="row">
+        <div class="col-xs-2">
+            <button data-ng-click="play('button_feedback_disabled')"
+                    data-ng-disabled="operations['button_feedback_disabled'].isLoading"
+                    class="btn btn-success pull-right">
+                <span class="fa fa-save"></span>
+                Save
+            </button>
+        </div>
+        <div class="col-xs-10">
+            A button that is disabled when clicked. Good feedback, but how do you tell if the application froze?
+        </div>
+    </div>
+</div>
+
+<small>Example (Great)</small>
+<div class="well">
+    <div class="row">
+        <div class="col-xs-2">
+            <div class="pull-right">
+            <span data-ng-if="operations['button_feedback_spinneroutside'].isLoading"
+                  class="fa fa-spin fa-spinner"></span>
+                <button data-ng-click="play('button_feedback_spinneroutside')"
+                        data-ng-disabled="operations['button_feedback_spinneroutside'].isLoading"
+                        class="btn btn-success">
+                    <span class="fa fa-save"></span>
+                    Save
+                </button>
+            </div>
+        </div>
+        <div class="col-xs-10">
+            A button that is disabled and has a spinner next to it when clicked. Now you feel like the system is doing something.
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="row">
+        <div class="col-xs-2">
+            <button data-ng-click="play('button_feedback_spinner')"
+                    data-ng-disabled="operations['button_feedback_spinner'].isLoading"
+                    class="btn btn-success pull-right">
+            <span data-ng-if="operations['button_feedback_spinner'].isLoading"
+                  class="fa fa-spin fa-spinner"></span>
+            <span data-ng-if="!operations['button_feedback_spinner'].isLoading"
+                  class="fa fa-save"></span>
+                {{ operations['button_feedback_spinner'].isLoading ? 'Saving' : 'Save' }}
+            </button>
+        </div>
+        <div class="col-xs-10">
+            The button can have a spinner inside and describe what is happening, too.
+        </div>
+    </div>
+</div>
+<br/>

@@ -1,0 +1,125 @@
+
+.content-wrapper{
+    min-height: 100%;
+}
+.footer{
+
+    bottom: 0;
+    width: 100%;
+    height:60px;
+    background-color: #EFF9FD;
+    text-align: center;
+    display: table;
+    color: #a7aeb1;
+    font-size: 90%;
+
+}
+.footer a{
+    color: #a7aeb1;
+    font-size: 90%;
+}
+
+.footer-body{
+
+    display:table-cell;
+    vertical-align: middle;
+}
+
+.navigationActive {
+    border-bottom: 2px solid #97d228;
+}
+
+.navbar-default {
+    background-color: #EFF9FD;
+
+}
+.navbar-userButton {
+    padding-top: 7.5px;
+}
+
+.splash-container {
+    background: url('../images/statebackground.jpg') no-repeat;
+}
+
+.app-header {
+    padding-bottom: 10px;
+
+}
+
+html {
+    overflow-y: scroll;
+    height: 100%;
+    padding-bottom: 60px;
+    min-height: 100%;
+    position:relative;
+}
+/*Prevents Navigation Bar from overlapping content*/
+body {
+   padding-top: 60px;
+    height: 100%;
+
+
+}
+
+
+.timesheet-alert {
+    padding: 1em;
+}
+
+/**Timesheet CSS*/
+
+.selectedCellHighlight {
+    background-color: #E6F2FA !important; /**[JG]: Prevents override by bootstrap's table zebrastripes*/
+}
+
+.timesheetInputCell {
+    width: 50px;
+}
+
+.timesheetInputBox {
+    width: 40px;
+    padding-left: 4px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height:1.75em
+}
+
+.timesheetTimeCodeCell{
+    width: 50px;
+}
+
+.weekendCellHighlight {
+    background-color: lightgrey !important;
+}
+.tableIgnoreStriped {
+    background-color: transparent !important; /**[JG]: Prevent soverride by bootstrap's table zebrastripes.**/
+}
+
+.timesheetInputBoxHasComment {
+    border-bottom-width: 3px;
+    border-bottom-color: gray;
+}
+
+.timesheetG1DraftHighlight {
+    background-color: #F8F2D5 !important;
+}
+.timesheetG1SubmittedHighlight {
+    background-color: #EFF9FD !important;
+}
+
+.timesheetTotalHoursInvalid {
+    color: red;
+}
+
+
+
+/**Unknown*/
+
+.approved-check {
+    color: #97d228;
+}
+
+.add-plus {
+    color: #000000;
+}

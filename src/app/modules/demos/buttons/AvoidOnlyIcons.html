@@ -1,0 +1,54 @@
+<h3>Avoid Only Icons</h3>
+<p>
+    Using pure icons as buttons should be avoided. You don't know how your user is going to interpret the symbol or its surrounding context.
+</p>
+<small>Example (Bad)</small>
+<div class="well">
+    <div class="row">
+        <div class="col-xs-4">
+            <button class="btn btn-success pull-right">
+                <span class="fa fa-search"></span>
+            </button>
+        </div>
+        <div class="col-xs-8">
+            Does this mean Search? Inspect? Zoom? Identify? Everyone will have a different answer depending on their background.
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-xs-4">
+            <button class="btn btn-success pull-right">
+                <span class="fa fa-pencil"></span>
+            </button>
+        </div>
+        <div class="col-xs-8">
+            Context matters. This may mean 'Edit' in a record program, 'Draw' in an art application, or 'Sign' in a document reader.
+        </div>
+    </div>
+</div>
+
+<small>Example (Good)</small>
+<div class="well">
+    <div class="row">
+        <div class="col-xs-4">
+            <button class="btn btn-success pull-right">
+                <span class="fa fa-search"></span> Enlarge Image
+            </button>
+        </div>
+        <div class="col-xs-8">
+            Users don't have to think to figure this button out. The icon helps enhance the meaning.
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-xs-4">
+            <button class="btn btn-success pull-right">
+                <span class="fa fa-pencil"></span> Select Pencil Tool
+            </button>
+        </div>
+        <div class="col-xs-8">
+            Unless context is established effectively, it is better to be explicit.
+        </div>
+    </div>
+</div>
+<br/>

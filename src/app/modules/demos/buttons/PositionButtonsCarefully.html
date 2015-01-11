@@ -1,0 +1,91 @@
+<h3>Position Buttons Carefully</h3>
+<p>
+    Typical users have certain expectations in button placement. Avoid breaking those expectations.
+</p>
+<small>Example (Bad)</small>
+<div class="well">
+    <div class="row">
+        <div class="col-xs-8">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                     <div class="panel">
+                        <div class="modal-header">
+                            <button type="button" class="close pull-left" ><span>&times;</span></button>
+                            <h4 class="modal-title">&nbsp;Close me</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                This modal's close button is on the top left instead of the traditional top right that many computer users are used to.
+                            </p>
+                            <p>Another pitfall is that the "Next" button is to the left of the "Cancel" button. Traditionally, going to the "next" section and the right side of the screen are closely associated to give an illusion of progress.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Next</button>
+                            <button type="button" class="btn btn-link pull-right">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<small>Example (Good)</small>
+<div class="well">
+    <div class="row">
+        <div class="col-xs-8">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="panel">
+                        <div class="modal-header">
+                            <button type="button" class="close" ><span>&times;</span></button>
+                            <h4 class="modal-title">&nbsp;Close me</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                This modal's close button is on the top right - as expected.
+                            </p>
+                            <p>
+                                The next and cancel buttons are in their traditional order, too.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-link">Cancel</button>
+                            <button type="button" class="btn btn-primary">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<small>Example (Best)</small>
+<div class="well">
+    <div class="row">
+        <div class="col-xs-8">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="panel">
+                        <div class="modal-header">
+                            <button type="button" class="close" ><span>&times;</span></button>
+                            <h4 class="modal-title">&nbsp;Close me</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                This modal's cancel button is WAY to the left, avoiding accidental clicks and further emphasizing that "Next" means progress.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-link pull-left">Cancel</button>
+                            <button type="button" class="btn btn-primary">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br/>
