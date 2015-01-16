@@ -5,6 +5,7 @@ angular
     .module('uiux',
     [
         'ngResource',
+        'ngSanitize',
         'ui.bootstrap',
         'ui.router',
         'com.jgefroh.WidgetModule',

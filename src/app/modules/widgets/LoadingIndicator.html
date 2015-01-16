@@ -1,7 +1,9 @@
 <div>
-    <div data-ng-if="isLoading">
-        <span class="fa fa-spin fa-spinner"></span>
-        {{ message }}
+    <div data-ng-if="isLoading"
+         data-ng-class="{'text-center': isCentered}"
+         style="{{'font-size:' + fontSize}}">
+        <span class="{{ iconClass }}"></span>
+        <span data-ng-bind="message"></span>
     </div>
     <div data-ng-if="!isLoading" data-ng-transclude>
 

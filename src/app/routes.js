@@ -15,11 +15,6 @@
                 templateUrl: 'modules/demos/DemoView.html',
                 controller: 'DemoController'
             })
-            .state('demo.loading', {
-                url: '/loading',
-                templateUrl: 'modules/demos/loading/LoadingDemoView.html',
-                controller: 'LoadingDemoController'
-            })
             .state('demo.buttons', {
                 url: '/buttons',
                 templateUrl: 'modules/demos/buttons/ButtonDemoView.html',
@@ -29,6 +24,16 @@
                 url: '/forms',
                 templateUrl: 'modules/demos/forms/FormDemoView.html',
                 controller: 'FormDemoController'
+            })
+            .state('demo.techniques', {
+                url: '/techniques',
+                templateUrl: 'modules/demos/techniques/TechniqueDemoView.html',
+                controller: 'TechniqueDemoController'
+            })
+            .state('demo.widgets', {
+                url: '/widgets',
+                templateUrl: 'modules/demos/widgets/WidgetsDemoView.html',
+                controller: 'WidgetsDemoController'
             });
             $urlRouterProvider.when('', '/splash'); //[JG]: Default page to splash when accessing for first time.
     }
