@@ -1,0 +1,45 @@
+<h1>Auto Table</h1>
+<div class="row">
+    <div class="col-xs-8">
+        <p>
+            A lot of tables I've made have the same features: display some data and provide some actions.
+        </p>
+        <p>This directive will auto generate simple tables.
+            <br/> If the headers and fields are missing, it will read the first object's properties and use it to fill out the data.</p>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-xs-7">
+        <div class="well">
+            <div data-auto-table
+                 data-objects="objects"
+                 data-fields="fields"
+                 data-headers="headers"
+                 data-actions="actions">
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-5">
+        <h4>loadingIndicator</h4>
+        <div class="form-group">
+            <label><small>objects - The objects to display.</small></label>
+            <input class="form-control" data-ng-model="objectsJson" data-ng-blur="saveJson('objects', objectsJson)">
+        </div>
+        <div class="form-group">
+            <label>fields <small> (Optional) - A string array of field names to display.</small></label>
+            <input class="form-control" data-ng-model="fieldsJson" data-ng-blur="saveJson('fields', fieldsJson)">
+        </div>
+        <div class="form-group">
+            <label>headers <small> (Optional) - A string array of header names to use.</small></label>
+            <input class="form-control" data-ng-model="headersJson" data-ng-blur="saveJson('headers', headersJson)">
+        </div>
+        <div class="form-group">
+            <label>actions <small> (Optional) An array of actions: {text, iconClass, buttonClass, onClick(object)}</small></label>
+        </div>
+    </div>
+</div>
+<br/>
+<br/>

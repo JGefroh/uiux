@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-xs-5">
+        <div class="form-group">
+            <label data-ng-bind="leftLabel"
+                   class="control-label"></label>
+            <select multiple
+                    data-ng-disabled="operations.isFormDisabled"
+                    data-ng-model="selectedLeftList"
+                    data-ng-options="{{ labelExpression }} for option in getUnusedObjects() track by option.id"
+                    class="form-control"
+                    data-ng-attr-size="{{ numVisibleInBox }}"></select>
+            <span class="form-control-feedback"></span>
+        </div>
+    </div>
+    <div class="col-xs-1 text-center" style="margin-top: 5em;">
+        <button class="btn btn-xs btn-block btn-success"
+                data-ng-click="moveToRight(selectedLeftList)"
+                data-ng-disabled="operations.isFormDisabled"
+                style="margin-bottom: 1em;">
+            <span class="fa fa-arrow-right"></span> Add
+        </button>
+        <button class="btn btn-xs btn-block btn-danger"
+                data-ng-click="moveToLeft(selectedRightList)"
+                data-ng-disabled="operations.isFormDisabled">
+            <span class="fa fa-arrow-left"></span> Remove
+        </button>
+    </div>
+    <div class="col-xs-5">
+        <div class="form-group">
+            <label data-ng-bind="rightLabel"
+                   class="control-label"></label>
+            <select multiple
+                    data-ng-disabled="operations.isFormDisabled"
+                    data-ng-model="selectedRightList"
+                    data-ng-options="{{ labelExpression }} for option in rightList track by option.id"
+                    class="form-control"
+                    data-ng-attr-size="{{ numVisibleInBox }}"></select>
+            <span class="form-control-feedback"></span>
+        </div>
+    </div>
+</div>

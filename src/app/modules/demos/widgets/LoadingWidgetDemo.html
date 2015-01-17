@@ -1,0 +1,99 @@
+<h1>Loading Indicator</h1>
+<div class="row">
+    <div class="col-xs-8">
+        <p>
+            Loading indicators are important because they provide feedback to users that something is happening or going to happen. Without them, users are left wondering if their button click went through or if the program is actually getting their emails.
+        </p>
+        <p>This directive will handle the hiding/displaying of loading screens for wrapped content.</p>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-xs-7">
+        <button class="btn btn-success"
+                data-ng-click="play('inbox')"
+                data-ng-disabled="operations['inbox'].isLoading">
+            <span class="fa fa-play"></span>
+            Play
+        </button>
+        <button class="btn btn-success"
+                data-ng-if="!operations['inbox'].isLoading"
+                data-ng-click="startLoading('inbox')">
+            <span class="fa fa-play"></span>
+            Start Loading
+        </button>
+        <button class="btn btn-danger"
+                data-ng-if="operations['inbox'].isLoading"
+                data-ng-click="stopLoading('inbox')">
+            <span class="fa fa-stop"></span>
+            Stop Loading
+        </button>
+        <div class="well">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Inbox</h3>
+                </div>
+                <div class="panel-body">
+                    <div data-loading-indicator
+                         data-font-size="fontSize"
+                         data-message="message"
+                         data-is-loading="operations['inbox'].isLoading"
+                         data-is-centered="isCentered"
+                         data-icon-class="iconClass">
+                        <table class="table table-responsive">
+                            <tr>
+                                <th>Subject</th>
+                                <th>From</th>
+                                <th>Date</th>
+                            </tr>
+                            <tr>
+                                <td>Shellcore Airlines Flight Confirmation: #31415735</td>
+                                <td>Shellcore Airlines, LLC.</td>
+                                <td>01/24/2014</td>
+                            </tr>
+                            <tr>
+                                <td>re: Interview Request</td>
+                                <td>Joseph Gefroh</td>
+                                <td>01/11/2014</td>
+                            </tr>
+                            <tr>
+                                <td>fwd: deposed king of nigeria seeks your assistance</td>
+                                <td>Grandma</td>
+                                <td>01/10/2014</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-5">
+        <h4>loadingIndicator</h4>
+        <div class="form-group">
+            <label>message<small> - The message to display.</small></label>
+            <input class="form-control" data-ng-model="message">
+        </div>
+        <div class="form-group">
+            <label>fontSize <small> (Optional | default: 1em) - The size of the loading message.</small></label>
+            <input class="form-control" data-ng-model="fontSize">
+        </div>
+        <div class="form-group">
+            <label>iconClass <small> (Optional | default: fa fa-spin fa-spinner)- Set the CSS class to put on the icon</small></label>
+            <input class="form-control" data-ng-model="iconClass">
+        </div>
+        <div class="form-group">
+            <label>isCentered <small> (Optional | default: false) - Sets whether the loading message is centered or not.</small></label>
+            <br/>
+            <input type="checkbox" data-ng-model="isCentered">
+        </div>
+        <div class="form-group">
+            <label>isLoading <small> (Optional | default: false) - Set whether the loading message is displayed or not.</small></label>
+            <br/>
+            <input type="checkbox" data-ng-model="operations['inbox'].isLoading">
+        </div>
+    </div>
+</div>
+<br/>
+<br/>

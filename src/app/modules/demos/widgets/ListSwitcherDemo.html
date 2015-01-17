@@ -1,0 +1,56 @@
+<h1>List Switcher</h1>
+<div class="row">
+    <div class="col-xs-8">
+        <p>
+            This is a simple directive that allows you to take items from one list and put them in another.
+        </p>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="well">
+            <div data-list-switcher
+                 data-all-options="allOptions"
+                 data-right-list="rightList"
+                 data-left-label="leftLabel"
+                 data-right-label="rightLabel"
+                 data-num-visible-in-box="numVisibleInBox"
+                 data-label-expression="labelExpression">
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <h4>listSwitcher</h4>
+        <div class="form-group">
+            <label><small>allOptions - An array of possible options.</small></label>
+            <input class="form-control" data-ng-model="allOptionsJson" data-ng-blur="saveJson('allOptions', allOptionsJson)">
+        </div>
+
+        <div class="form-group">
+            <label><small>rightList - The list to move items into.</small></label>
+            <input class="form-control" data-ng-model="allOptionsJson" data-ng-blur="saveJson('rightList', rightListJson)">
+        </div>
+        <div class="form-group">
+            <label><small>leftLabel - The label for the list on the left.</small></label>
+            <input class="form-control" data-ng-model="leftLabel" data-ng-blur="save('leftLabel', leftLabel)">
+        </div>
+        <div class="form-group">
+            <label><small>rightLabel - The label for the list on the right.</small></label>
+            <input class="form-control" data-ng-model="rightLabel" data-ng-blur="save('rightLabel', rightLabel)">
+        </div>
+
+        <div class="form-group">
+            <label><small>numVisibleInBox - The number of items that are visible in the list.</small></label>
+            <input class="form-control" data-ng-model="numVisibleInBox" data-ng-blur="save('numVisibleInBox', numVisibleInBox)">
+        </div>
+        <div class="form-group">
+            <label><small>labelExpression - The expression used to retrieve the label, using 'option' as an object name.</small></label>
+            <input class="form-control" data-ng-model="labelExpression" data-ng-blur="save('labelExpression', labelExpression)">
+        </div>
+    </div>
+</div>
+<br/>
+<br/>

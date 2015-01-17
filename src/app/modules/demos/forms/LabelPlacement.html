@@ -1,0 +1,78 @@
+<h3>
+    Labels - Keep Related Things Close Together
+</h3>
+<p>Labels should be placed immediately next to the field they describe.</p>
+
+<small>Example (Bad)</small>
+<div class="well">
+    <div class="row">
+        <div class="col-xs-8">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-xs-3 text-left">Name</label>
+                    <div class="col-xs-3">
+                        <input type="email" class="form-control">
+                    </div>
+                    <label class="col-xs-3 text-left">Email</label>
+                    <div class="col-xs-3">
+                        <input type="email" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-3 text-left">Organizational Identity</label>
+                    <div class="col-xs-3">
+                        <input type="email" class="form-control">
+                    </div>
+                    <label class="col-xs-3 text-left">Employee ID</label>
+                    <div class="col-xs-3">
+                        <input type="email" class="form-control">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-4">
+            <p>
+                These left-aligned labels are far away from their respective input fields. It's hard to match up the labels with their respective input fields.
+            </p>
+
+            <p>
+                One of the labels is long - you'd have to break it up or abbreviate it to keep things aligned.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<small>Example (Good)</small>
+<div class="well">
+    <div class="row">
+        <div class="col-xs-8">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">Name</label>
+                    <div class="col-xs-3">
+                        <input type="email" class="form-control">
+                    </div>
+                    <label class="col-xs-3 control-label">Email</label>
+                    <div class="col-xs-3">
+                        <input type="email" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-3 control-label">Organizational Identity</label>
+                    <div class="col-xs-3">
+                        <input type="email" class="form-control">
+                    </div>
+                    <label class="col-xs-3 control-label">Employee ID</label>
+                    <div class="col-xs-3">
+                        <input type="email" class="form-control">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-4">
+            By right-aligning the labels, we've closely associated them with their respective input boxes.
+        </div>
+    </div>
+</div>
+<br/>

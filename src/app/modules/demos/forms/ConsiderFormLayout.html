@@ -1,0 +1,134 @@
+<h3>
+    Consider Form Layout
+</h3>
+<p>Forms should be easy to scan and fill out. That's why I recommend single-column forms.</p>
+
+
+<small>Example (Bad)</small>
+<div class="well">
+    <div class="row">
+        <div class="col-xs-8">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-xs-6">
+                        <label>Name</label>
+                        <input class="form-control">
+                        <span class="help-block">We'll use this name in any emails we send you.</span>
+                    </div>
+                    <div class="col-xs-6">
+                        <label>Email</label>
+                        <input class="form-control">
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-6">
+                        <label>Organizational Identity</label>
+                        <input class="form-control">
+                        <span class="help-block">This is your department's 9-digit identifier.</span>
+                    </div>
+                    <div class="col-xs-6 has-feedback has-error">
+                        <label>Employee ID</label>
+                        <input class="form-control">
+                        <span class="form-control-feedback fa fa-remove"></span>
+                        <span class="help-block">Your employee ID (###-###) is used to identify you to all of our internal services.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <p>
+                This double column layout might save vertical space, but it makes everything else more difficult.
+            </p>
+            <p>
+                Your eye goes back and forth between labels and text fields. There's too much eye movement amongst the clutter.
+            </p>
+            <p>
+                You can't tell at a glance what the next field will be if you tab - will it go down or to the right?
+            </p>
+            <p>
+                You also limit the amount of space you have for validation/error messages, as well as format hints and other helpful context-building messages.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+<small>Example (Good)</small>
+<div class="well">
+    <div class="row">
+        <div class="col-xs-8">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label class="control-label">Name</label>
+                        <input class="form-control" />
+                        <span class="form-control-feedback"></span>
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div style="padding-top: 1.2em;"></div>
+                    <p class="help-block" style="height: 1em;">We'll use this name in any emails we send you.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label class="control-label">Email</label>
+                        <input class="form-control" />
+                        <span class="form-control-feedback"></span>
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div style="padding-top: 1.2em;"></div>
+                    <p class="help-block" style="height: 1em;"></p>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                        <label class="control-label">Organizational Identity</label>
+                        <input class="form-control" />
+                        <span class="form-control-feedback"></span>
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div style="padding-top: 1.2em;"></div>
+                    <p class="help-block" style="height: 1em;">This is your department's 9-digit identifier.</p>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="form-group has-feedback has-error">
+                        <label class="control-label">Employee ID</label>
+                        <input class="form-control" />
+                        <span class="form-control-feedback"><span class="fa fa-remove"></span></span>
+                        <span class="help-block">Your Employee ID is required!</span>
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div style="padding-top: 1.2em;"></div>
+                    <p class="help-block" style="height: 1em;">Your employee ID (###-###) is used to identify you to all of our internal services.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <p>
+                This single column layout takes more vertical space. However, it has enough room to display field validation messages as well as context-building hints.
+            </p>
+            <p>
+                While you fill out the form, your eye moves in a single direction - downward. If you ever need a hint, you can look right next to the field.
+            </p>
+        </div>
+    </div>
+</div>
+<br/>

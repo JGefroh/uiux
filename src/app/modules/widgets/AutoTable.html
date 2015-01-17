@@ -1,0 +1,37 @@
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>Actions</th>
+        <th data-ng-if="headers.length > 0"
+            data-ng-repeat="header in headers track by $index"
+            style="text-transform: capitalize;">
+            {{ header }}
+        </th>
+        <th data-ng-if="!headers || headers.length === 0"
+            data-ng-repeat="header in generatedHeaders track by $index"
+            style="text-transform: capitalize;">
+            {{ header }}
+        </th>
+    </tr>
+    <tr data-ng-repeat="object in objects">
+        <td>
+            <button data-ng-repeat="action in actions"
+                    data-ng-click="action.onClick(object)"
+                    class="{{ action.buttonClass }}">
+                <span class="{{ action.iconClass }}"></span>
+                <span data-ng-bind="action.text"></span>
+            </button>
+        </td>
+        <td data-ng-if="fields"
+            data-ng-repeat="field in fields track by $index">
+            <span data-ng-bind="object[field]"></span>
+        </td>
+        <td data-ng-if="!fields && headers"
+            data-ng-repeat="header in headers track by $index">
+            <span data-ng-bind="object[header]"></span>
+        </td>
+        <td data-ng-if="!fields && !headers && generatedHeaders"
+            data-ng-repeat="header in generatedHeaders track by $index">
+            <span data-ng-bind="object[header]"></span>
+        </td>
+    </tr>
+</table>

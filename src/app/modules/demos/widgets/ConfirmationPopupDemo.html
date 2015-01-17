@@ -1,0 +1,38 @@
+<h1>Generic Confirmation Popup</h1>
+<div class="row">
+    <div class="col-xs-8">
+        <p>
+            Confirmation Popups are a common way to ensure that users don't perform actions accidentally.
+        </p>
+        <p>This controller/template pair for use with $modal allows you to have a confirmation popup without having to create a new controller and template.</p>
+    </div>
+</div>
+
+<hr>
+<div class="row">
+    <div class="col-xs-7">
+        <button class="btn btn-success"
+                data-ng-click="open(header, question, message)">
+            <span class="fa fa-play"></span>
+            Open Popup
+        </button>
+
+    </div>
+    <div class="col-xs-5">
+        <h4>Generic Confirmation Popup</h4>
+        <div class="form-group">
+            <label>header<small> - The text to display in the header.</small></label>
+            <input class="form-control" data-ng-model="header">
+        </div>
+        <div class="form-group">
+            <label>question <small> The question to display.</small></label>
+            <input class="form-control" data-ng-model="question">
+        </div>
+        <div class="form-group">
+            <label>message <small> The text to display as a subtext.</small></label>
+            <input class="form-control" data-ng-model="message">
+        </div>
+    </div>
+</div>
+<br/>
+<br/>

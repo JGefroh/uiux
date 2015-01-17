@@ -1,0 +1,63 @@
+<h3>
+    Use Labels
+</h3>
+<p>Input fields should be clearly marked and identified. There's been an unfortunate trend to put the label inside the field itself. I recommend against it.</p>
+<small>Example (Bad)</small>
+<div class="well">
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="form-group">
+                <input class="form-control" placeholder="Enter date as yyyy-dd-mm.">
+            </div>
+        </div>
+        <div class="col-xs-8">
+            <p>
+               Having the label inside the input field makes it confusing because it disappears once a user starts typing.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="form-group">
+                <input class="form-control" placeholder="Enter your account number as @##-AAAA-##-AA.">
+            </div>
+        </div>
+        <div class="col-xs-8">
+            <p>
+                Did you forget what format the account number should've been in? Don't force users to remember how to enter data.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<small>Example (Good)</small>
+<div class="well">
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label>Date (yyyy-dd-mm)</label>
+                <input class="form-control">
+            </div>
+        </div>
+        <div class="col-xs-8">
+            <p>
+                Having the label always visible lets you look at it if you ever forget.
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label>Account Number (@##-AAAA-##-AA)</label>
+                <input class="form-control">
+            </div>
+        </div>
+        <div class="col-xs-8">
+            <p>
+                Users don't have to remember anything - they can always see what is expected of them.
+            </p>
+        </div>
+    </div>
+</div>
+<br/>

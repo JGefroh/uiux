@@ -1,0 +1,87 @@
+<h3>
+    Labels - Consider Label Alignment
+</h3>
+<p>
+    There's several thoughts on the position of labels: to the left of the input field or directly above it.
+
+    While there are benefits and drawbacks of each method, I personally prefer top-aligned labels.
+</p>
+
+
+
+<small>Example</small>
+<div class="well">
+    <div class="row">
+        <div class="col-xs-4">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-xs-7 control-label">Name</label>
+                    <div class="col-xs-5">
+                        <input type="email" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-7 control-label">Email</label>
+                    <div class="col-xs-5">
+                        <input type="email" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-7 control-label">Organizational Identity</label>
+                    <div class="col-xs-5">
+                        <input type="email" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-xs-7 control-label">Employee ID</label>
+                    <div class="col-xs-5">
+                        <input type="email" class="form-control">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-8">
+            <p>
+                These labels are to the left of the input field and right-aligned. It takes more horizontal space, but it is generally easy to figure out what's expected.
+            </p>
+            <p>
+                A downside is that your eye must move back and forth between the label and the input field as you fill out the form.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<small>Example (Preferred)</small>
+<div class="well">
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="form-group">
+                <label>Name</label>
+                <input class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Organizational Identity</label>
+                <input class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Employee ID</label>
+                <input class="form-control">
+            </div>
+        </div>
+        <div class="col-xs-8">
+            <p>
+                These labels are directly above the input field. It takes more vertical space, but it is easy to scan and figure out what is expected.
+            </p>
+            <p>
+                While you fill out the form, your eye moves in a single direction - downward.
+            </p>
+        </div>
+    </div>
+</div>
+<br/>
