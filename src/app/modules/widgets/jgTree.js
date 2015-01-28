@@ -15,7 +15,7 @@
                 $scope.onCollapse = function(node) {
                 }
             }
-            var currentlySelected = null;
+
             var stateByNode = {};
             $scope.isCollapsed = function(node) {
                 if (stateByNode[node.value]) {
@@ -28,11 +28,11 @@
             };
 
             $scope.isSelected = function(node) {
-                return currentlySelected === node.value;
+                return $scope.currentlySelected.value === node.value;
             };
 
             $scope.select = function(node) {
-                currentlySelected = node.value;
+                $scope.currentlySelected = node;
                 $scope.onSelect({node: node});
             };
 
@@ -59,7 +59,8 @@
                 onSelect: '&',
                 leafIconClass: '@',
                 expandIconClass: '@',
-                collapseIconClass: '@'
+                collapseIconClass: '@',
+                currentlySelected: '='
             },
             templateUrl: 'jgTree.html',
             controller: ['$scope', TreeController]

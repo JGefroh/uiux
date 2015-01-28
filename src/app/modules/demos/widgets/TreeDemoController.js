@@ -1,6 +1,25 @@
 (function () {
     function TreeDemoController($scope, $timeout) {
         function initialize() {
+            $scope.currentlySelected =
+            {
+                label: 'Child_1_1',
+                value: 11,
+                children: [
+                    {
+                        value: 111,
+                        label: 'Child_1_1_1'
+                    },
+                    {
+                        value: 112,
+                        label: 'Child_1_2_2'
+                    },
+                    {
+                        value: 113,
+                        label: 'Child_1_3_3'
+                    }
+                ]
+            };
             $scope.tree = {
                 label: 'Root',
                 value: 0,
@@ -9,24 +28,7 @@
                         label: 'Child_1',
                         value: 1,
                         children: [
-                            {
-                                label: 'Child_1_1',
-                                value: 11,
-                                children: [
-                                    {
-                                        value: 111,
-                                        label: 'Child_1_1_1'
-                                    },
-                                    {
-                                        value: 112,
-                                        label: 'Child_1_2_2'
-                                    },
-                                    {
-                                        value: 113,
-                                        label: 'Child_1_3_3'
-                                    }
-                                ]
-                            },
+                            $scope.currentlySelected,
                             {
                                 value: 12,
                                 label: 'Child_1_2'
