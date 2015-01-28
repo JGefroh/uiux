@@ -4,6 +4,7 @@
 angular
     .module('uiux',
     [
+        'ngAnimate',
         'ngResource',
         'ngSanitize',
         'ui.bootstrap',

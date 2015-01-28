@@ -1,0 +1,17 @@
+<ul>
+    <li data-ng-repeat="node in node.children">
+        <div class="jg-tree-item" data-ng-class="{'jg-tree-node-selected':isSelected(node)}">
+            <a class="btn btn-xs btn-link text-center"
+               data-ng-click="toggleCollapse(node)"
+               data-ng-if="node.children">
+               <span data-ng-if="!isCollapsed(node)" class="{{ expandedIconClass }}"></span>
+               <span data-ng-if="isCollapsed(node)" class="{{ collapsedIconClass }}"></span>
+            </a><a data-ng-if="!node.children"  class="btn btn-xs btn-link text-center"><span class="{{ leafIconClass }}"></span></a>
+            <a class="btn btn-xs btn-link"
+                    data-ng-click="select(node)">  {{ node.label }} </a>
+        </div>
+        <div data-ng-if="!isCollapsed(node)"
+             data-ng-include="'modules/widgets/jgTree.html'"
+             class="jg-tree jg-tree-animation"></div>
+    </li>
+</ul>

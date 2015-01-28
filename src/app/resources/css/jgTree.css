@@ -1,0 +1,49 @@
+.jg-tree li {
+    list-style-type: none;
+    margin-left: -1.05em;
+    padding: 0;
+}
+
+.jg-tree-animation.ng-enter, .jg-tree-animation.ng-leave {
+    -webkit-transition:0.25s linear all;
+    transition:0.25s linear all;
+}
+
+.jg-tree-animation.ng-enter {
+    max-height: 0em;
+}
+.jg-tree-animation.ng-enter.ng-enter-active {
+    max-height: 1em;
+}
+
+.jg-tree-animation.ng-leave {
+    opacity:0;
+    max-height: 1em;
+}
+.jg-tree-animation.ng-leave.ng-leave-active {
+    max-height: 0em;
+    opacity:0;
+}
+
+
+.jg-tree-item {
+    border-radius: 5px;
+}
+
+.jg-tree-item:hover {
+    background-color: rgba(114, 115, 117, 0.51);
+}
+
+.jg-tree-node-selected {
+    background-color: #6B9CFF;
+}
+
+.jg-tree-node-selected:hover {
+}
+
+.jg-tree-node-selected * {
+    color: white;
+}
+.jg-tree-node-selected *:hover {
+     color: white;
+ }
