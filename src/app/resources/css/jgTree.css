@@ -4,25 +4,32 @@
     padding: 0;
 }
 
-.jg-tree-animation.ng-enter, .jg-tree-animation.ng-leave {
-    -webkit-transition:0.25s linear all;
-    transition:0.25s linear all;
+.jg-tree-animation.ng-leave {
+    transition: 0.2s linear all;
+    position: relative;
+    height: 30px;
+    max-height: 30px;
+    display: block;
+    opacity: 1;
+}
+.jg-tree-animation.ng-leave.ng-leave-active {
+    height: 0;
+    max-height:0;
+    opacity: 0;
 }
 
 .jg-tree-animation.ng-enter {
-    max-height: 0em;
+    transition: 0.2s linear all;
+    position: relative;
+    display: block;
+    height: 0;
+    max-height:0;
+    opacity: 0;
 }
 .jg-tree-animation.ng-enter.ng-enter-active {
-    max-height: 1em;
-}
-
-.jg-tree-animation.ng-leave {
-    opacity:0;
-    max-height: 1em;
-}
-.jg-tree-animation.ng-leave.ng-leave-active {
-    max-height: 0em;
-    opacity:0;
+    height: 30px;
+    max-height: 30px;
+    opacity: 1;
 }
 
 
