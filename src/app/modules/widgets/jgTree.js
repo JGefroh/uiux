@@ -1,17 +1,6 @@
 (function() {
     function TreeDirective() {
         function TreeController($scope) {
-            if (!$scope.leafIconClass) {
-                $scope.leafIconClass = 'fa fa-circle';
-            }
-
-            if (!$scope.collapsedIconClass) {
-                $scope.collapsedIconClass = 'fa fa-plus';
-            }
-            if (!$scope.expandedIconClass) {
-                $scope.expandedIconClass = 'fa fa-minus';
-            }
-
             if (!$scope.onExpand) {
                 $scope.onExpand = function(node) {
                 }
@@ -67,7 +56,10 @@
                 node: '=',
                 onExpand: '&',
                 onCollapse: '&',
-                onSelect: '&'
+                onSelect: '&',
+                leafIconClass: '@',
+                expandIconClass: '@',
+                collapseIconClass: '@'
             },
             templateUrl: 'jgTree.html',
             controller: ['$scope', TreeController]

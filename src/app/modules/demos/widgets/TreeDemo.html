@@ -1,19 +1,11 @@
-<h2>Tree Demo</h2>
+<h2>jgTree Demo</h2>
+<p>jgTree is a basic tree that allows you to select children from a hierarchy.</p>
 <p>Last Event: {{ lastEvent }}</p>
-<button data-ng-click="show = !show" >Show/Hide</button>
-<ul data-ng-if="show">
-    <li> potato</li>
-    <li> potato</li>
-    <li> potato</li>
-    <li> potato</li>
-    <li> potato</li>
-    <li> potato</li>
-    <li> potato</li>
-    <li> potato</li>
-</ul>
-
 <div data-jg-tree
      data-node="tree"
+     data-collapse-icon-class="fa fa-minus"
+     data-expand-icon-class="fa fa-plus"
+     data-leaf-icon-class="fa fa-circle"
      data-on-select="onSelect(node)"
      data-on-expand="onExpand(node)"
      data-on-collapse="onCollapse(node)"></div>

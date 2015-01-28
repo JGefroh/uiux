@@ -1,11 +1,11 @@
-<ul>
+<ul class="jg-tree">
     <li data-ng-repeat="node in node.children">
         <div class="jg-tree-item" data-ng-class="{'jg-tree-node-selected':isSelected(node)}">
             <a class="btn btn-xs btn-link text-center"
                data-ng-click="toggleCollapse(node)"
                data-ng-if="node.children">
-               <span data-ng-if="!isCollapsed(node)" class="{{ expandedIconClass }}"></span>
-               <span data-ng-if="isCollapsed(node)" class="{{ collapsedIconClass }}"></span>
+               <span data-ng-if="!isCollapsed(node)" class="{{ expandIconClass }}"></span>
+               <span data-ng-if="isCollapsed(node)" class="{{ collapseIconClass }}"></span>
             </a><a data-ng-if="!node.children"  class="btn btn-xs btn-link text-center"><span class="{{ leafIconClass }}"></span></a>
             <a class="btn btn-xs btn-link"
                     data-ng-click="select(node)">  {{ node.label }} </a>
