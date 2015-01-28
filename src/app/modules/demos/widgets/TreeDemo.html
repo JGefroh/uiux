@@ -16,16 +16,16 @@
             <p>Last Event: {{ lastEvent }}</p>
             <div data-jg-tree
                  data-node="tree"
-                 data-collapse-icon-class="fa fa-minus"
-                 data-expand-icon-class="fa fa-plus"
-                 data-leaf-icon-class="fa fa-circle"
-                 data-on-select="onSelect(node)"
-                 data-on-expand="onExpand(node)"
                  data-currently-selected="currentlySelected"
                  data-children-property="'children'"
                  data-get-label="getLabel(node)"
                  data-get-value="getValue(node)"
-                 data-on-collapse="onCollapse(node)"></div>
+                 data-on-select="onSelect(node)"
+                 data-on-expand="onExpand(node)"
+                 data-on-collapse="onCollapse(node)"
+                 data-collapse-icon-class="fa fa-minus"
+                 data-expand-icon-class="fa fa-plus"
+                 data-leaf-icon-class="fa fa-circle"></div>
         </div>
     </div>
 </div>
