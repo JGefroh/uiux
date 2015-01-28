@@ -80,7 +80,18 @@
         };
         $scope.onSelect = function(node) {
             $scope.lastEvent = node.label + ' selected.';
-        }
+        };
+        $scope.getLabel = function(node) {
+            if (node) {
+                return node.label;
+            }
+            return node.label;
+        };
+        $scope.getValue = function(node) {
+            if (node) {
+                return node.value;
+            }
+        };
     }
     angular
         .module('uiux.DemoModule')

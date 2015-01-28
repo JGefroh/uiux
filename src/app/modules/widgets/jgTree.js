@@ -1,34 +1,25 @@
 (function() {
     function TreeDirective() {
         function TreeController($scope) {
-            if (!$scope.onExpand) {
-                $scope.onExpand = function(node) {
-                }
+            if (!$scope.childrenProperty) {
+                console.warn("jgTree: Children property is missing - won't be able to build tree.");
             }
 
-            if (!$scope.onSelect) {
-                $scope.onSelect = function(node) {
-                }
-            }
-
-            if (!$scope.onCollapse) {
-                $scope.onCollapse = function(node) {
-                }
-            }
 
             var stateByNode = {};
             $scope.isCollapsed = function(node) {
-                if (stateByNode[node.value]) {
-                    return stateByNode[node.value].collapsed;
+                var nodeAtIndex = stateByNode[$scope.getValue({node:node})];
+                if (nodeAtIndex) {
+                    return nodeAtIndex.collapsed;
                 }
                 else {
-                    stateByNode[node.value] = {};
+                    stateByNode[$scope.getValue({node:node})] = {};
                 }
                 return true;
             };
 
             $scope.isSelected = function(node) {
-                return $scope.currentlySelected.value === node.value;
+                return $scope.getValue({node:$scope.currentlySelected}) === $scope.getValue({node:node});
             };
 
             $scope.select = function(node) {
@@ -37,8 +28,8 @@
             };
 
             $scope.toggleCollapse = function(node) {
-                stateByNode[node.value].collapsed = !stateByNode[node.value].collapsed ;
-                if (stateByNode[node.value].collapsed) {
+                stateByNode[$scope.getValue({node:node})].collapsed = !stateByNode[$scope.getValue({node:node})].collapsed ;
+                if (stateByNode[$scope.getValue({node:node})].collapsed) {
                     $scope.onCollapse({node: node});
                 }
                 else {
@@ -47,7 +38,7 @@
             };
 
             $scope.expand = function(node) {
-                stateByNode[node.value].collapsed = false;
+                stateByNode[$scope.getValue({node:node})].collapsed = false;
             };
         }
         return {
@@ -60,7 +51,10 @@
                 leafIconClass: '@',
                 expandIconClass: '@',
                 collapseIconClass: '@',
-                currentlySelected: '='
+                currentlySelected: '=',
+                childrenProperty: '=',
+                getLabel: '&',
+                getValue: '&'
             },
             templateUrl: 'jgTree.html',
             controller: ['$scope', TreeController]
