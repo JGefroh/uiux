@@ -1,13 +1,29 @@
-<h2>jgTree Demo</h2>
-<p>jgTree is a basic tree that allows you to select children from a hierarchy.</p>
-<p>Currently selected: {{ currentlySelected.label }}</p>
-<p>Last Event: {{ lastEvent }}</p>
-<div data-jg-tree
-     data-node="tree"
-     data-collapse-icon-class="fa fa-minus"
-     data-expand-icon-class="fa fa-plus"
-     data-leaf-icon-class="fa fa-circle"
-     data-on-select="onSelect(node)"
-     data-on-expand="onExpand(node)"
-     data-currently-selected="currentlySelected"
-     data-on-collapse="onCollapse(node)"></div>
+<h1>jgTree</h1>
+<div class="row">
+    <div class="col-xs-8">
+        <p>
+            jgTree is a basic tree that allows you to select children from a hierarchy.
+        </p>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="well">
+            <p>Currently selected: {{ currentlySelected.label }}</p>
+            <p>Last Event: {{ lastEvent }}</p>
+            <div data-jg-tree
+                 data-node="tree"
+                 data-collapse-icon-class="fa fa-minus"
+                 data-expand-icon-class="fa fa-plus"
+                 data-leaf-icon-class="fa fa-circle"
+                 data-on-select="onSelect(node)"
+                 data-on-expand="onExpand(node)"
+                 data-currently-selected="currentlySelected"
+                 data-on-collapse="onCollapse(node)"></div>
+        </div>
+    </div>
+</div>
+<br/>
