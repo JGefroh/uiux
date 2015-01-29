@@ -94,7 +94,8 @@
                             },
                             {
                                 value: 22,
-                                label: 'Child_A_A'
+                                label: 'Child_A_A',
+                                children: []
                             },
                             {
                                 value: 23,

@@ -6,7 +6,7 @@
                data-ng-if="node[childrenProperty]">
                 <span data-ng-if="!isCollapsed(node)" class="{{ collapseIconClass }}"></span>
                 <span data-ng-if="isCollapsed(node)" class="{{ expandIconClass }}"></span>
-            </a><a data-ng-if="!node[childrenProperty]" class="btn btn-xs btn-link text-center"><span class="{{ leafIconClass }}"></span></a>
+            </a><a data-ng-if="!node[childrenProperty] || node[childrenProperty].length <= 0" class="btn btn-xs btn-link text-center"><span class="{{ leafIconClass }}"></span></a>
             <a class="btn btn-xs btn-link"
                data-ng-click="select(node)"
                data-ng-bind="getLabel({node:node})"></a>
