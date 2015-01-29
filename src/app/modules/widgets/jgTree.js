@@ -15,7 +15,6 @@
             };
 
             $scope.initNodes = function(node, parent) {
-                console.info("Initializing nodes " + node.$$hashKey + ' ' + node.label + ', ' + parent.$$hashKey + ' ' + parent.label);
                 if (!stateByNode[$scope.getValue({node:parent})]) {
                     stateByNode[$scope.getValue({node:parent})] = {
                         $$hashKey: parent.$$hashKey
@@ -113,13 +112,6 @@
                         }
                     }
                 };
-
-                $scope.api.collapseChain = function() {
-                    angular.forEach(stateByNode, function(nodeState, index) {
-                        nodeState.collapsed = false;
-                    });
-                };
-
             }
         }
         return {
