@@ -40,12 +40,54 @@
                         ]
                     },
                     {
-                        label: 'Child_2',
+                        label: 'Child_A',
                         value: 2,
                         children: [
                             {
                                 value: 21,
-                                label: 'Child_2_1'
+                                label: 'Child_B',
+                                children: [
+                                    {
+                                        value: 211,
+                                        label: 'Child_C',
+                                        children: [
+                                            {
+                                                value: 2111,
+                                                label: 'Child_D',
+                                                children: [
+                                                    {
+                                                        value: 3111,
+                                                        label: 'Child_E',
+                                                        children: [
+                                                            {
+                                                                value: 4111,
+                                                                label: 'Child_F',
+                                                                children: [
+                                                                    {
+                                                                        value: 5111,
+                                                                        label: 'Child_G',
+                                                                        children: [
+                                                                            {
+                                                                                value: 6111,
+                                                                                label: 'Child_H',
+                                                                                children: [
+                                                                                    {
+                                                                                        value: 7111,
+                                                                                        label: 'Child_J'
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
                             },
                             {
                                 value: 22,

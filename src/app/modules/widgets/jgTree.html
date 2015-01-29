@@ -4,14 +4,14 @@
             <a class="btn btn-xs btn-link text-center"
                data-ng-click="toggleCollapse(node)"
                data-ng-if="node[childrenProperty]">
-               <span data-ng-if="!isCollapsed(node)" class="{{ collapseIconClass  }}"></span>
-               <span data-ng-if="isCollapsed(node)" class="{{ expandIconClass }}"></span>
-            </a><a data-ng-if="!node[childrenProperty]"  class="btn btn-xs btn-link text-center"><span class="{{ leafIconClass }}"></span></a>
+                <span data-ng-if="!isCollapsed(node)" class="{{ collapseIconClass }}"></span>
+                <span data-ng-if="isCollapsed(node)" class="{{ expandIconClass }}"></span>
+            </a><a data-ng-if="!node[childrenProperty]" class="btn btn-xs btn-link text-center"><span class="{{ leafIconClass }}"></span></a>
             <a class="btn btn-xs btn-link"
-                    data-ng-click="select(node)"
-                    data-ng-bind="getLabel({node:node})"></a>
+               data-ng-click="select(node)"
+               data-ng-bind="getLabel({node:node})"></a>
         </div>
-        <div data-ng-if="!isCollapsed(node)"
+        <div data-ng-show="!isCollapsed(node)"
              data-ng-include="'modules/widgets/jgTree.html'"
              class="jg-tree jg-tree-animation"></div>
     </li>

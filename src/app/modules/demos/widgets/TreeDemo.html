@@ -4,6 +4,17 @@
         <p>
             jgTree is a basic tree that allows you to select children from a hierarchy.
         </p>
+        <br/>
+        It features the following:
+        <ul>
+            <li>2-way binding with its data source - the tree updates as the source updates.</li>
+            <li>Collapsing/Expanding nodes and selecting nodes are two separate operations.</li>
+            <li>Works with your data, instead of having to change the data to work with the directive.</li>
+            <li>Customizable icons, CSS, and animation.</li>
+            <li>Supports up to 7 levels of nesting.</li>
+            <li>Several convenience watchers.</li>
+        </ul>
+
     </div>
 </div>
 
@@ -15,7 +26,7 @@
             <p>Currently selected: {{ currentlySelected.label }}</p>
             <p>Last Event: {{ lastEvent }}</p>
             <div data-jg-tree
-                 data-node="tree"
+                 data-tree="tree"
                  data-currently-selected="currentlySelected"
                  data-children-property="'children'"
                  data-get-label="getLabel(node)"
