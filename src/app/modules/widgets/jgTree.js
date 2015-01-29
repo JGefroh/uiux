@@ -4,6 +4,7 @@
             if (!$scope.childrenProperty) {
                 console.warn("jgTree: Children property is missing - won't be able to build tree.");
             }
+            initializeAPI();
 
             var stateByNode = {};
             stateByNode[$scope.getValue({node:$scope.node})] = {};
@@ -13,6 +14,22 @@
                 children: [$scope.tree]
             };
 
+            $scope.initNodes = function(node, parent) {
+                console.info("Initializing nodes " + node.$$hashKey + ' ' + node.label + ', ' + parent.$$hashKey + ' ' + parent.label);
+                if (!stateByNode[$scope.getValue({node:parent})]) {
+                    stateByNode[$scope.getValue({node:parent})] = {
+                        $$hashKey: parent.$$hashKey
+                    };
+                }
+
+                if (!stateByNode[$scope.getValue({node:node})]) {
+                    stateByNode[$scope.getValue({node:node})] = {
+                        $$hashKey: node.$$hashKey,
+                        collapsed : false,
+                        parentState: stateByNode[$scope.getValue({node:parent})]
+                    };
+                }
+            };
             $scope.isCollapsed = function(node) {
                 if (!node) {
                     return true;
@@ -20,13 +37,6 @@
                 var nodeState = stateByNode[$scope.getValue({node:node})];
                 if (nodeState) {
                     return nodeState.collapsed;
-                }
-                else {
-                    stateByNode[$scope.getValue({node:node})] = {
-                        collapsed : false,
-                        value: $scope.getValue({node:node})
-                    };
-                    return stateByNode[$scope.getValue({node:node})].collapsed;
                 }
             };
 
@@ -55,14 +65,68 @@
                 }
             };
 
+            $scope.collapseAll = function() {
+                angular.forEach(stateByNode, function(nodeState, index) {
+                    stateByNode.collapsed = true;
+                });
+            };
+
             $scope.expand = function(node) {
                 stateByNode[$scope.getValue({node:node})].collapsed = false;
             };
+
+            function initializeAPI() {
+                if (!$scope.api) {
+                    return;
+                }
+
+                $scope.api.collapseAll = function() {
+                    angular.forEach(stateByNode, function(nodeState, index) {
+                        nodeState.collapsed = true;
+                    });
+                };
+
+                $scope.api.expandAll = function() {
+                    angular.forEach(stateByNode, function(nodeState, index) {
+                        nodeState.collapsed = false;
+                    });
+                };
+
+                $scope.api.collapse = function(node) {
+                    if (node) {
+                        stateByNode[$scope.getValue({node:node})].collapsed = true;
+                    }
+                };
+
+                $scope.api.expand = function(node) {
+                    if (node) {
+                        stateByNode[$scope.getValue({node:node})].collapsed = false;
+                    }
+                };
+
+                $scope.api.expandTo = function(node) {
+                    var currentState = stateByNode[$scope.getValue({node:node})];
+                    while (currentState) {
+                        currentState = currentState.parentState;
+                        if (currentState) {
+                            currentState.collapsed = false;
+                        }
+                    }
+                };
+
+                $scope.api.collapseChain = function() {
+                    angular.forEach(stateByNode, function(nodeState, index) {
+                        nodeState.collapsed = false;
+                    });
+                };
+
+            }
         }
         return {
             restrict: 'A',
             scope: {
                 tree: '=',
+                api: '=',
                 onExpand: '&',
                 onCollapse: '&',
                 onSelect: '&',
@@ -80,5 +144,8 @@
     }
     angular
         .module('com.jgefroh.WidgetModule')
-        .directive('jgTree', TreeDirective);
+        .directive('jgTree', TreeDirective)
+        .config(['$rootScopeProvider', function($rootScopeProvider) {
+            $rootScopeProvider.digestTtl(30); //[JG]: The higher this is, the more you can nest before running into infdig - recommend not setting too high (THIS IS A HACK).
+        }]);
 })();

@@ -27,14 +27,17 @@
                     {
                         label: 'Child_1',
                         value: 1,
+                        parent: {value: 0},
                         children: [
                             $scope.currentlySelected,
                             {
                                 value: 12,
+                                parent: {value: 1},
                                 label: 'Child_1_2'
                             },
                             {
                                 value: 13,
+                                parent: {value: 1},
                                 label: 'Child_1_3'
                             }
                         ]
@@ -91,11 +94,11 @@
                             },
                             {
                                 value: 22,
-                                label: 'Child_2_2'
+                                label: 'Child_A_A'
                             },
                             {
                                 value: 23,
-                                label: 'Child_2_3'
+                                label: 'Child_A_B'
                             }
                         ]
                     },
@@ -110,6 +113,8 @@
                 ]
             };
         }
+
+        $scope.jgTreeHandle = {};
 
         initialize();
 
