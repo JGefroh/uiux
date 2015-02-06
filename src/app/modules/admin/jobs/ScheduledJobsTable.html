@@ -1,0 +1,37 @@
+<h4>
+    Scheduled Jobs
+    <button data-ng-click="scheduleJob()"
+            class="btn btn-xs btn-link">
+        <span class="fa fa-plus"></span>
+        Schedule a Job
+    </button>
+</h4>
+<table class="table table-bordered table-condensed">
+    <tr>
+        <th>
+            Actions
+        </th>
+        <th>Next Run</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Last Ran</th>
+    </tr>
+    <tr data-ng-repeat="entry in upcomingJobs">
+        <td>
+            <button data-ng-click="run(entry)"
+                    class="btn btn-xs btn-default btn-block">
+                <span class="fa fa-play"></span>
+                Run Now
+            </button>
+            <button data-ng-click="configure(entry)"
+                    class="btn btn-xs btn-default btn-block">
+                <span class="fa fa-gear"></span>
+                Configure
+            </button>
+        </td>
+        <td data-ng-bind="entry.scheduledDate | date: 'MM/dd/yyyy \' at \' hh:mm:ss a'"></td>
+        <td data-ng-bind="entry.job.name"></td>
+        <td data-ng-bind="entry.job.description"></td>
+        <td data-ng-bind="entry.lastRanDate | date: 'MM/dd/yyyy \' at \' hh:mm:ss a'"></td>
+    </tr>
+</table>

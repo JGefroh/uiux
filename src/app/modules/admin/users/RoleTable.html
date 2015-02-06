@@ -1,0 +1,37 @@
+<h4>
+    Roles
+    <button data-ng-click="create()"
+            class="btn btn-xs btn-link">
+        <span class="fa fa-plus"></span>
+        Create Role
+    </button>
+</h4>
+<table class="table table-bordered table-condensed">
+    <tr>
+        <th>Actions</th>
+        <th>Role Name</th>
+        <th>Role Description</th>
+        <th>Permissions</th>
+    </tr>
+    <tr data-ng-repeat="role in roles">
+        <td>
+            <button data-ng-click="edit(user)"
+                    class="btn btn-xs btn-default btn-block">
+                <span class="fa fa-edit"></span>
+                Edit
+            </button>
+            <button data-ng-click="deleteUser(user)"
+                    class="btn btn-xs btn-default btn-block">
+                <span class="fa fa-remove"></span>
+                Delete
+            </button>
+        </td>
+        <td data-ng-bind="role.name"></td>
+        <td data-ng-bind="role.description"></td>
+        <td>
+            <span data-ng-repeat="permission in role.permissions">
+                 <span data-ng-bind="permission + ', '"></span>
+            </span>
+        </td>
+    </tr>
+</table>

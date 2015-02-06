@@ -1,0 +1,49 @@
+<h1>Input Fields</h1>
+<div class="row">
+    <div class="col-xs-12">
+        <p>
+            These input fields are pretty awesome.
+        </p>
+        <button data-ng-click="isLoading = !isLoading"
+                class="btn btn-default">
+            {{ isLoading ? 'Stop' : 'Play' }}
+        </button>
+        <button data-ng-click="isDisabled = !isDisabled"
+                class="btn btn-default">
+            {{ isDisabled ? 'Enable' : 'Disable' }}
+        </button>
+        <button data-ng-click="state = null"
+                class="btn btn-default">
+            Mark Normal
+        </button>
+        <button data-ng-click="state = 'INVALID'"
+                class="btn btn-danger">
+            Mark Invalid
+        </button>
+        <button data-ng-click="state = 'VALID'"
+                class="btn btn-success">
+            Mark Valid
+        </button>
+    </div>
+    <div class="col-xs-3">
+        <div data-text-input-field
+             data-label="First Name"
+             data-model="input.firstName"
+             data-is-loading="isLoading"
+             data-is-disabled="isDisabled"
+             data-validation-name="name"
+             data-is-showing-message="state"
+             data-validation-state="state">
+            <span data-ng-if="state === 'INVALID'">Oops, this field is invalid.</span><br/>
+         </div>
+        <div data-text-input-field
+             data-label="Last Name"
+             data-model="input.lastName"
+             data-is-loading="isLoading"
+             data-is-disabled="isDisabled"
+             data-is-showing-message="state"
+             data-validation-state="state">
+            <span data-ng-if="state === 'INVALID'">Oops, this field is invalid.</span><br/>
+        </div>
+    </div>
+</div>

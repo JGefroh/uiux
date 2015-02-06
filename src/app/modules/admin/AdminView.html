@@ -1,0 +1,35 @@
+<link href="modules/admin/admin.css" rel="stylesheet">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <a data-ui-sref="admin.dashboard"
+               data-ui-sref-active="btn-primary"
+               class="btn btn-default btn-lg">
+                <span class="fa fa-dashboard"></span>
+                Dashboard
+            </a>
+            <a data-ui-sref="admin.jobs"
+               data-ui-sref-active="btn-primary"
+               class="btn btn-default btn-lg">
+                <span class="fa fa-calendar"></span>
+                Scheduled Jobs <span class="badge" style="background-color: red;" data-ng-bind="numberOfFailedJobs"></span>
+            </a>
+            <a data-ui-sref="admin.users"
+               data-ui-sref-active="btn-primary"
+               class="btn btn-default btn-lg">
+                <span class="fa fa-group"></span>
+                Users and Roles
+            </a>
+
+            <h2 style="margin-top: 0.25em;">
+                <span data-ng-bind="getPageTitle();"
+                      class="small" ></span>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+        </div>
+    </div>
+</div>
+<div data-ui-view></div>

@@ -5,16 +5,23 @@
                 console.warn("jgTree: Children property is missing - won't be able to build tree.");
             }
             initializeAPI();
-
+            initializeTree($scope.tree);
             var stateByNode = {};
-            stateByNode[$scope.getValue({node:$scope.node})] = {};
-            $scope.node = {
-                label: $scope.tree.label,
-                value: $scope.tree.value,
-                children: [$scope.tree]
-            };
+
+            function initializeTree(tree) {
+                stateByNode = {};
+                stateByNode[$scope.getValue({node:tree})] = {};
+                $scope.node = {
+                    label: $scope.getLabel({node:tree}),
+                    value: $scope.getValue({node:tree})
+                };
+                $scope.node[$scope.childrenProperty] = [tree];
+            }
 
             $scope.initNodes = function(node, parent) {
+                if (!node || !parent) {
+                    return;
+                }
                 if (!stateByNode[$scope.getValue({node:parent})]) {
                     stateByNode[$scope.getValue({node:parent})] = {
                         $$hashKey: parent.$$hashKey
@@ -78,6 +85,14 @@
                 if (!$scope.api) {
                     return;
                 }
+
+                $scope.api.initializeTree = function(tree) {
+                    initializeTree(tree);
+                };
+
+                $scope.api.select = function(node) {
+                    $scope.select(node);
+                };
 
                 $scope.api.collapseAll = function() {
                     angular.forEach(stateByNode, function(nodeState, index) {

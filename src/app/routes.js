@@ -34,6 +34,11 @@
                 url: '/widgets',
                 templateUrl: 'modules/demos/widgets/WidgetsDemoView.html',
                 controller: 'WidgetsDemoController'
+            })
+            .state('email', {
+                url: '/emails',
+                templateUrl: 'modules/demos/pages/email/EmailView.html',
+                controller: 'EmailController'
             });
             $urlRouterProvider.when('', '/splash'); //[JG]: Default page to splash when accessing for first time.
     }

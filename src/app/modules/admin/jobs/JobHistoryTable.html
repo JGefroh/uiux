@@ -1,0 +1,34 @@
+<h4>Job History</h4>
+<table class="table table-bordered table-condensed">
+    <tr>
+        <th>Actions</th>
+        <th>Started</th>
+        <th>Ended</th>
+        <th>Job</th>
+        <th>Status</th>
+        <th>Notes</th>
+    </tr>
+    <tr data-ng-repeat="entry in history"
+        data-ng-class="{'danger':isFailure(entry),
+                        'success':isSuccess(entry)}">
+        <td>
+            <button data-ng-click="viewLog()"
+                    class="btn btn-default btn-block">
+                View Log
+            </button>
+            <button data-ng-click="markRead(entry)"
+                    class="btn btn-default btn-block">
+                Mark Read
+            </button>
+        </td>
+        <td data-ng-bind="entry.startDate | date: 'MM/dd/yyyy \' at \' hh:mm:ss a'"></td>
+        <td data-ng-bind="entry.endDate | date: 'MM/dd/yyyy \' at \' hh:mm:ss a'"></td>
+        <td data-ng-bind="entry.job.name"></td>
+        <td>
+            <span data-ng-class="{'fa fa-exclamation-triangle':isFailure(entry),
+                                  'fa fa-check-circle':isSuccess(entry)}"></span>
+            <span data-ng-bind="entry.status"></span>
+        </td>
+        <td data-ng-bind="entry.notes"></td>
+    </tr>
+</table>
